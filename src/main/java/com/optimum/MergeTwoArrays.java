@@ -11,6 +11,13 @@ public class MergeTwoArrays {
         int[] nums1 = {1, 2, 3, 0, 0, 0};
         int[] nums2 = {2, 5, 6};
 
+        int [] mergedArray = IntStream.concat(Arrays.stream(nums1), Arrays.stream(nums2))
+                .sorted()
+                .distinct()
+                .toArray();
+
+        Arrays.stream(mergedArray).forEach(System.out::println);
+
         Arrays.stream(IntStream.concat(Arrays.stream(nums1), Arrays.stream(nums2))
                 .sorted().toArray()).distinct().forEach(System.out::println);
 
